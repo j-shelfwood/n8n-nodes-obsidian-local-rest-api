@@ -2,6 +2,12 @@
 
 A community node for n8n that allows you to interact with your Obsidian Vault via a REST API.
 
+![Banner](banner.webp)
+
+## Prerequisites
+
+Before using this node, you must have the [Obsidian Vault REST API](https://github.com/j-shelfwood/prj-obsidian-local-rest-api) set up and running (e.g. at `http://localhost:8000`). Follow that repository's README to install and start the API.
+
 ## Installation
 
 ```bash
