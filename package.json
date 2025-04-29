@@ -17,10 +17,9 @@
   },
   "keywords": [
     "n8n",
-    "n8n-nodes",
     "obsidian",
-    "community-node",
-    "openapi",
+    "local",
+    "rest api",
     "n8n-community-node-package"
   ],
   "author": "j-shelfwood",
@@ -44,7 +43,7 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "nodes": [
-      "dist/index.js"
+      "dist/nodes/ObsidianVaultRestApi/ObsidianVaultRestApi.node.js"
     ],
     "credentials": [
       "dist/credentials/BearerAuth.credentials.js"
