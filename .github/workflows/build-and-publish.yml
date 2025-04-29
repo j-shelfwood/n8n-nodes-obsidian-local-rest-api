@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    name: Build TypeScript
+    name: Build and Publish
     runs-on: macos-latest
     env:
       HOMEBREW_NO_AUTO_UPDATE: "1"
@@ -38,28 +38,10 @@ jobs:
       - name: Compile TypeScript
         run: npm run build
 
-  publish:
-    name: Publish to npm
-    needs: build
-    if: startsWith(github.ref, 'refs/tags/v')
-    runs-on: macos-latest
-    env:
-      HOMEBREW_NO_AUTO_UPDATE: "1"
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Configure npm authentication
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
-
       - name: Publish to npm
+        if: startsWith(github.ref, 'refs/tags/v')
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --access public
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+          npm publish --access public
