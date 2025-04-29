@@ -18,7 +18,6 @@ npm install n8n-nodes-obsidian-local-rest-api
 
 ### Credentials
 
-
 **Obsidian Vault API** credentials are optional for local development. If your API does not require authentication (e.g. when running locally), you can leave the Access Token blank.
 
 - **Host**: URL of your Obsidian Vault REST API (e.g. `http://localhost:8000` or your custom domain like `http://obsidian-local-rest-api.test`)
