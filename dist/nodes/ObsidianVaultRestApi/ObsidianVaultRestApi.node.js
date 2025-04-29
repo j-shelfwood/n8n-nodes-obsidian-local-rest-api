@@ -56,7 +56,7 @@ class ObsidianVaultRestApi {
             outputs: ['main'],
             credentials: [
                 {
-                    name: 'bearerAuth',
+                    name: 'obsidianVaultApi',
                     required: false,
                 },
             ],

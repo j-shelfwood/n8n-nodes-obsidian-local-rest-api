@@ -46,7 +46,7 @@
       "dist/nodes/ObsidianVaultRestApi/ObsidianVaultRestApi.node.js"
     ],
     "credentials": [
-      "dist/credentials/BearerAuth.credentials.js"
+      "dist/credentials/ObsidianVaultApi.credentials.js"
     ]
   }
 }

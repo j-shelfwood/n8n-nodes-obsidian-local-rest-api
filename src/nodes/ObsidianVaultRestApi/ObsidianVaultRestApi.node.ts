@@ -25,7 +25,7 @@ export class ObsidianVaultRestApi implements INodeType {
         outputs: ['main'],
         credentials: [
             {
-                name: 'bearerAuth',
+                name: 'obsidianVaultApi',
                 required: false,
             },
         ],

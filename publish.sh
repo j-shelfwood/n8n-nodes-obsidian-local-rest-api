@@ -1,8 +1,14 @@
 #!/bin/bash
 set -e
 
-# Bump patch version, create commit and annotated tag
-NEW_TAG=$(npm version patch -m "chore(release): bump version to %s")
+# Usage: ./publish.sh [patch|minor|major]
+if [ -z "$1" ]; then
+  echo "Usage: $0 [patch|minor|major]"
+  exit 1
+fi
+
+# Bump version, create commit and annotated tag
+NEW_TAG=$(npm version $1 -m "chore(release): bump version to %s")
 echo "Created git tag $NEW_TAG"
 
 # Push both commit and tag to remote
