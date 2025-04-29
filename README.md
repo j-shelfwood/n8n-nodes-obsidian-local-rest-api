@@ -16,10 +16,14 @@ npm install n8n-nodes-obsidian-local-rest-api
 
 ## Credentials
 
-When adding the node, create **Bearer Token** credentials with:
+### Credentials
 
-- **Host**: URL of your Obsidian Vault REST API (e.g. `http://localhost:8000`)
-- **Access Token**: Your bearer token
+**Bearer Token** credentials are optional for local development. If your API does not require authentication (e.g. when running locally), you can leave the Access Token blank.
+
+- **Host**: URL of your Obsidian Vault REST API (e.g. `http://localhost:8000` or your custom domain like `http://obsidian-local-rest-api.test`)
+- **Access Token**: Your bearer token (leave blank for no authentication)
+
+If you want to use a custom domain (e.g. with Laravel Valet), set the Host field to your local domain, such as `http://obsidian-local-rest-api.test`.
 
 ## Node
 

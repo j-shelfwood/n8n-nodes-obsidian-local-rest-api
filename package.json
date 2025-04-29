@@ -25,7 +25,7 @@
   "author": "j-shelfwood",
   "license": "MIT",
   "scripts": {
-    "build": "tsc && cp src/openapi.json dist && cp logo.svg dist",
+    "build": "tsc && cp src/openapi.json dist && cp logo.svg dist && mkdir -p dist/nodes/ObsidianVaultRestApi && cp logo.svg dist/nodes/ObsidianVaultRestApi/",
     "dev": "tsc --watch",
     "prepare": "npm run build"
   },

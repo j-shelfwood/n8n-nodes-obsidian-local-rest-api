@@ -27,7 +27,8 @@ export class BearerAuth implements ICredentialType {
         type: 'generic',
         properties: {
             headers: {
-                Authorization: 'Bearer {{$credentials.token}}',
+                // Only add Authorization header if token is provided
+                Authorization: '={{$credentials.token ? `Bearer ${$credentials.token}` : undefined}}',
             },
         },
     };
