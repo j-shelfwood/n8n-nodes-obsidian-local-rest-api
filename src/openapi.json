@@ -17,7 +17,7 @@
     ],
     "security": [
         {
-            "bearerAuth": []
+            "obsidianVaultApi": []
         }
     ],
     "paths": {
@@ -554,7 +554,7 @@
     },
     "components": {
         "securitySchemes": {
-            "bearerAuth": {
+            "obsidianVaultApi": {
                 "type": "http",
                 "scheme": "bearer",
                 "bearerFormat": "JWT"
