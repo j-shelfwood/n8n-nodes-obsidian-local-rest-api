@@ -7,7 +7,21 @@ import * as openApiSpec from '../../openapi.json';
 
 const builderConfig: N8NPropertiesBuilderConfig = {};
 const parser = new N8NPropertiesBuilder(openApiSpec, builderConfig);
-const properties = parser.build();
+
+// Remove duplicated/unwanted n8n built-in options from properties
+const unwantedOptionNames = [
+    'batch', 'proxy', 'timeout', 'options', 'maxResults', 'splitIntoItems',
+    'continueOnFail', 'jsonParameters', 'responseFormat', 'fullResponse',
+    'download', 'fileName', 'fileSize', 'fileExtension', 'fileEncoding',
+    'fileContent', 'filePath', 'fileType', 'file', 'files', 'headers',
+    'queryParameters', 'bodyParameters', 'authentication',
+];
+const propertiesRaw = parser.build();
+const properties = Array.isArray(propertiesRaw)
+    ? propertiesRaw.filter(
+        (prop) => !unwantedOptionNames.includes(prop.name)
+    )
+    : propertiesRaw;
 
 export class ObsidianVaultRestApi implements INodeType {
     description: INodeTypeDescription = {
