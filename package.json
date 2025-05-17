@@ -31,14 +31,14 @@
   },
   "devDependencies": {
     "@types/node": "^22.15.2",
-    "axios": "^1.8.2",
     "concurrently": "^9.0.1",
     "typescript": "^5.8.3"
   },
   "dependencies": {
     "@devlikeapro/n8n-openapi-node": "^0.1.4",
     "n8n-workflow": "^1.82.0",
-    "yaml": "^2.7.1"
+    "yaml": "^2.7.1",
+    "axios": "^1.8.2"
   },
   "n8n": {
     "n8nNodesApiVersion": 1,
