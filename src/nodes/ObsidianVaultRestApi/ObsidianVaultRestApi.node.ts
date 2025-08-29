@@ -37,6 +37,7 @@ export class ObsidianVaultRestApi implements INodeType {
         },
         inputs: ['main'] as any,
         outputs: ['main'] as any,
+        usableAsTool: true,
         credentials: [
             {
                 name: 'obsidianVaultApi',
