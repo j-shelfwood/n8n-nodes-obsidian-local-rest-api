@@ -65,6 +65,7 @@ class ObsidianVaultRestApi {
             },
             inputs: ['main'],
             outputs: ['main'],
+            usableAsTool: true,
             credentials: [
                 {
                     name: 'obsidianVaultApi',
